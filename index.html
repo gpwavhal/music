@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Play Music</title>
+</head>
+<body>
+    <h1>Play Music</h1>
+
+    <button onclick="playMusic()">Play Music</button>
+
+    <audio id="musicPlayer" controls>
+        <!-- Replace 'path/to/music.mp3' with the actual path to your music file -->
+        <source src="music/ls_theme.mp3" type="audio/mp3">
+        Your browser does not support the audio tag.
+    </audio>
+
+    <script>
+        function playMusic() {
+            var musicPlayer = document.getElementById('musicPlayer');
+
+            // Check if the audio is paused or ended
+            if (musicPlayer.paused || musicPlayer.ended) {
+                musicPlayer.play();
+            } else {
+                musicPlayer.pause();
+            }
+        }
+    </script>
+</body>
+</html>
